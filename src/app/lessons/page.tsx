@@ -16,6 +16,7 @@ import {
   Globe,
   Thermometer,
   Book,
+  Bone,
 } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import Image from "next/image";
@@ -129,6 +130,22 @@ export default function ClimateChangePage() {
           </Card>
         </section>
 
+        <section>
+          <h2 className="text-2xl font-semibold mb-4 flex items-center">
+            <Bone className="mr-2" />
+            Relationship Between Climate Change and Other High School Subjects.
+          </h2>
+          <Image
+            src="/black-graph.jpg"
+            alt="graph"
+            className="object-cover w-full h-96"
+            width={1920}
+            height={1080}
+          />
+
+          <p>Photo credit: NASA</p>
+          <br />
+        </section>
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-4 flex items-center">
             <Thermometer className="mr-2" />
@@ -145,6 +162,16 @@ export default function ClimateChangePage() {
                   <CardTitle>Key Causes of Climate Change</CardTitle>
                 </CardHeader>
                 <CardContent>
+                  <Image
+                    src="/sub-details.jpg"
+                    alt="graph"
+                    className="o h-"
+                    width={420}
+                    height={500}
+                  />
+                  <br />
+                  <p>Photo credit: NASA</p>
+                  <br />
                   <ul className="list-disc pl-5 space-y-2">
                     <li>
                       Burning Fossil Fuels: Releases CO2, trapping heat in the
@@ -357,6 +384,18 @@ export default function ClimateChangePage() {
               )}
             </CardContent>
           </Card>
+        </section>
+        <section>
+          <div className="flex flex-col items-center">
+            <Image
+              src="/planet.jpg"
+              alt="Climate change"
+              className=" w-1/2 h-1/2"
+              width={1920}
+              height={1080}
+            />
+            <p className="font-bold text-lg">Be the change the world needs!</p>
+          </div>
         </section>
       </main>
 
