@@ -1,4 +1,4 @@
-import {Filter, Search} from "lucide-react";
+import { Filter, Search } from "lucide-react";
 
 const scoreData = [
     {

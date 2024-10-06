@@ -9,15 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  AlertCircle,
-  Lightbulb,
-  TreeDeciduous,
-  Globe,
-  Thermometer,
-  Book,
-  Bone,
-} from "lucide-react";
+import { AlertCircle, Lightbulb, Globe, Thermometer, Book } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import Image from "next/image";
 
@@ -130,22 +122,6 @@ export default function ClimateChangePage() {
           </Card>
         </section>
 
-        <section>
-          <h2 className="text-2xl font-semibold mb-4 flex items-center">
-            <Bone className="mr-2" />
-            Relationship Between Climate Change and Other High School Subjects.
-          </h2>
-          <Image
-            src="/black-graph.jpg"
-            alt="graph"
-            className="object-cover w-full h-96"
-            width={1920}
-            height={1080}
-          />
-
-          <p>Photo credit: NASA</p>
-          <br />
-        </section>
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-4 flex items-center">
             <Thermometer className="mr-2" />
@@ -228,8 +204,18 @@ export default function ClimateChangePage() {
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-4 flex items-center">
             <Book className="mr-2" />
-            Climate Change and School Subjects
+            Relationship Between Climate Change and Other High School Subjects.
           </h2>
+          <Image
+            src="/black-graph.jpg"
+            alt="graph"
+            className="mx-auto h-"
+            width={820}
+            height={500}
+          />
+          <br />
+          <p>Photo credit: NASA</p>
+          <br />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Card>
               <CardHeader>
@@ -401,10 +387,7 @@ export default function ClimateChangePage() {
 
       <footer className="bg-green-600 text-white p-4 mt-12">
         <div className="container mx-auto text-center">
-          <p>
-            &copy; 2024 Climate Change Education Initiative. All rights
-            reserved.
-          </p>
+          <p>&copy; 2024 Earth is our paradise. All rights reserved.</p>
         </div>
       </footer>
     </div>
