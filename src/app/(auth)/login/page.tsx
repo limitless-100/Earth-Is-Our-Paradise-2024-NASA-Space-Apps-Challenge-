@@ -1,11 +1,15 @@
+"use client";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import LoginForm from "@/components/auth/LoginForm";
-function page() {
+function Page() {
+  // page router on login
+
   return (
     <div className="mx-auto grid w-[350px] h-[80vh] px-10 rounded-xl py-4 gap-6 bg-white">
       <div className="grid gap-2 text-center">
@@ -18,7 +22,7 @@ function page() {
         />
         <div>
           <h1 className="text-3xl font-bold">Welcome Back</h1>
-          <p>please enter your details</p>
+          <p>Please enter your details</p>
         </div>
       </div>
       <div className="grid gap-4">
@@ -37,4 +41,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
