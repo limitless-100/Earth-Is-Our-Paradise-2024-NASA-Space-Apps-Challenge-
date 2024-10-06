@@ -25,8 +25,16 @@ function Dashboard() {
             </div>
 
             <section className={"flex mt-8"}>
-                <div className={"bg-white rounded-2xl gap-4"}>
-
+                <div className={"bg-white flex rounded-2xl gap-4"}>
+                    {
+                        scoreData.map((datum, index) => {
+                            const {title, value, icon, avg} = datum
+                            return (<div key={index}>
+                                <h4>{title}</h4>
+                                
+                            </div>)
+                        })
+                    }
                 </div>
             </section>
         </main>
