@@ -18,6 +18,7 @@ import {
   Book,
 } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
+import Image from "next/image";
 
 export default function ClimateChangePage() {
   const [quizScore, setQuizScore] = useState(0);
@@ -92,7 +93,13 @@ export default function ClimateChangePage() {
           </h1>
         </div>
       </header>
-
+      <Image
+        src="/top-image.jpg"
+        alt="Climate change"
+        className="object-cover w-full h-96"
+        width={1920}
+        height={1080}
+      />
       <main className="container mx-auto px-4 py-8">
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-4 flex items-center">
