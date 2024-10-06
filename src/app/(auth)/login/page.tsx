@@ -1,12 +1,9 @@
 "use client";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import LoginForm from "@/components/auth/LoginForm";
 import { signInWithGoogle } from "@/lib/firebase/auth";
 import { createSession } from "@/actions/auth-actions";
 import { useUserSession } from "@/hooks/use-user-session";
