@@ -1,6 +1,7 @@
 import {Filter, Search} from "lucide-react";
 import Image from "next/image";
 import {Button} from "@/components/ui/button";
+import {toTitleCase} from "@/utils/string";
 
 const scoreData = [
     {
@@ -58,7 +59,8 @@ function Dashboard() {
                         })
                     }
                 </div>
-                <div className={"bg-yellow-400 flex rounded-3xl flex-col items-center text-center p-5 px-8 justify-between"}>
+                <div
+                    className={"bg-yellow-400 flex rounded-3xl flex-col items-center text-center p-5 px-8 justify-between"}>
                     <Image
                         src="/earth.svg"
                         alt="Image"
@@ -75,7 +77,40 @@ function Dashboard() {
                 <h2 className={"p-2 px-16 my-5 bg-slate-500 w-fit rounded-3xl"}>Students Leaderboard</h2>
 
                 <section className={"bg-white p-2 py-5 rounded-3xl"}>
+                    {
+                        students.map((student, index) => {
+                            const {name, avatar, progress, total} = student
+                            const avg = (progress / total) * 100
+                            return (
+                                <div className={"my-1 p-2 px-5 flex items-center justify-around"}>
+                                    <Image
+                                        src="/earth.svg"
+                                        alt="Image"
+                                        className=""
+                                        width={30}
+                                        height={30}
+                                    />
+                                    <h3>{name.split(' ').map(str => toTitleCase(str)).join(' ')}</h3>
+                                    <p className={"font-bold text-xl"}>{progress}/{total}</p>
+                                    <div></div>
+                                    <div
+                                        className={`w-44 h-8 bg-white relative rounded-full border border-gray-200 overflow-hidden`}>
+                                        <div
+                                            className={`h-full bg-blue-400 transition-all duration-300 ease-in-out`}
+                                            style={{width: `${avg}%`}}
+                                            role="progressbar"
+                                            aria-valuenow={avg}
+                                            aria-valuemin={0}
+                                            aria-valuemax={100}
+                                        >
+                                        </div>
 
+                                        <div className="grid top-0 left-0 z-30 absolute w-full h-full place-items-center font-bold text-xl">{avg}%</div>
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
                 </section>
             </section>
         </main>
