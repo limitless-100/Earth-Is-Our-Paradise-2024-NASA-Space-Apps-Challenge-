@@ -17,6 +17,15 @@ const scoreData = [
     }
 ]
 
+const students = [
+    {
+        name: "Samuel Onifadel",
+        progress: 35,
+        total: 56,
+        avatar: ""
+    }
+]
+
 function Dashboard() {
     return (
         <main className={"w-full h-full p-2 px-8"}>
@@ -63,7 +72,11 @@ function Dashboard() {
             </section>
 
             <section className={"mt-10"}>
-                <h2 className={"p-2 px-16 bg-slate-500 w-fit rounded-3xl"}>Students Leaderboard</h2>
+                <h2 className={"p-2 px-16 my-5 bg-slate-500 w-fit rounded-3xl"}>Students Leaderboard</h2>
+
+                <section className={"bg-white p-2 py-5 rounded-3xl"}>
+
+                </section>
             </section>
         </main>
     )
