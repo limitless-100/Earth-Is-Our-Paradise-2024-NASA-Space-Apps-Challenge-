@@ -17,6 +17,7 @@ export default function ClimateChangePage() {
   const [quizScore, setQuizScore] = useState(0);
   const [quizStarted, setQuizStarted] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [quizCompleted, setQuizCompleted] = useState(false);
 
   const quizQuestions = [
     {
@@ -73,10 +74,15 @@ export default function ClimateChangePage() {
     if (currentQuestion < quizQuestions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      setQuizStarted(false);
+      setQuizCompleted(true);
     }
   };
-
+  const resetQuiz = () => {
+    setQuizStarted(true);
+    setQuizScore(0);
+    setCurrentQuestion(0);
+    setQuizCompleted(false);
+  };
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-100 to-blue-100">
       <header className="bg-green-600 text-white p-4">
@@ -327,7 +333,7 @@ export default function ClimateChangePage() {
                     Start Quiz
                   </Button>
                 </div>
-              ) : currentQuestion < quizQuestions.length ? (
+              ) : !quizCompleted ? (
                 <div>
                   <h3 className="text-lg font-semibold mb-2">
                     {quizQuestions[currentQuestion].question}
@@ -356,14 +362,7 @@ export default function ClimateChangePage() {
                   <p>
                     Your score: {quizScore} out of {quizQuestions.length}
                   </p>
-                  <Button
-                    onClick={() => {
-                      setQuizStarted(true);
-                      setQuizScore(0);
-                      setCurrentQuestion(0);
-                    }}
-                    className="mt-4"
-                  >
+                  <Button onClick={resetQuiz} className="mt-4">
                     Retake Quiz
                   </Button>
                 </div>
