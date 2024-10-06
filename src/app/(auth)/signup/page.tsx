@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -7,25 +7,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import LoginForm from "@/components/auth/LoginForm";
-import { signInWithGoogle } from "@/lib/firebase/auth";
-import { createSession } from "@/actions/auth-actions";
-import { useUserSession } from "@/hooks/use-user-session";
 function Page() {
-  const router = useRouter();
-  const userSessionId = useUserSession(null);
   // page router on login
-  const handleSignIn = async () => {
-    const userUid = await signInWithGoogle();
-    if (userUid) {
-      await createSession(userUid);
-    }
-  };
 
-  useEffect(() => {
-    if (userSessionId) {
-      router.push("/dashboard");
-    }
-  }, [userSessionId]);
   return (
     <div className="mx-auto grid w-[350px] h-[80vh] px-10 rounded-xl py-4 gap-6 bg-white">
       <div className="grid gap-2 text-center">
@@ -42,7 +26,7 @@ function Page() {
         </div>
       </div>
       <div className="grid gap-4">
-        <Button className="w-full" onClick={handleSignIn}>
+        <Button variant="outline" className="w-full">
           Login with Google
         </Button>
       </div>
