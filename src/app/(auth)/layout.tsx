@@ -7,7 +7,7 @@ import React from "react";
 
 function layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="w-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-screen bg-[#e4e0e0]">
+    <div className="w-full lg:grid lg:grid-cols-2 min-h-screen bg-[#e4e0e0]">
       <div className="hidden bg-muted lg:flex items-center justify-center bg-[#e4e0e0]">
         <div className="flex flex-col items-center gap-4">
           <Image
